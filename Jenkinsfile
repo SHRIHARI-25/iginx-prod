@@ -46,11 +46,11 @@ pipeline{
               steps{
                   script{
 		 sh 'cp -r ../devops-training@2/target .'
-                   sh 'docker build . -t deekshithsn/devops-training:$Docker_tag'
+                   sh 'docker build . -t shrihari/devops-training:$Docker_tag'
 		   withCredentials([string(credentialsId: 'docker_password', variable: 'docker_password')]) {
 				    
-				  sh 'docker login -u deekshithsn -p $docker_password'
-				  sh 'docker push deekshithsn/devops-training:$Docker_tag'
+				  // sh 'docker login -u shrihari -p $docker_password'
+				  // sh 'docker push shrihari/devops-training:$Docker_tag'
 			}
                        }
                     }
